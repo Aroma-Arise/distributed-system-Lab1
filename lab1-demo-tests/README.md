@@ -1,4 +1,4 @@
-# Go HTTP Lab 1 Demo Tests
+# TDA596 Lab 1 Demo Tests
 
 These scripts require Python 3.8 or later and a running Lab 1 server. They use only the Python standard library. Each script sets up its own test files or subscriptions as needed and reports individual checks. A failed check prints the reason and exits with a nonzero status.
 
