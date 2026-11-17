@@ -45,7 +45,7 @@ The default server address is `127.0.0.1:8081`, which matches the Docker port ma
 | `10_post_atomic.py` | Two POST requests upload to the same path. At three checkpoints, GET returns the complete original file, then the complete version A, then the complete version B. |
 | `11_concurrency_limit.py` | GET succeeds while nine uploads are pending. With ten uploads pending, the eleventh request waits until one slot becomes free. |
 | `12_longpoll_slots.py` | The broker accepts a publication while ten long polls wait. All ten subscribers receive the message. |
-| `13_queue_full.py` | When one subscriber's 16-message queue fills up, the next publication still reaches another subscriber. The original 16 messages remain in order. |
+| `13_queue_full.py` | When one subscriber's 10-message queue fills up, the next publication still reaches another subscriber. The original 10 messages remain in order. |
 
 To run all scripts in order and stop at the first failure, run:
 
