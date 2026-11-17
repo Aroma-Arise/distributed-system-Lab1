@@ -3,7 +3,7 @@ from common import (
     run, status, subscribe, unique, unsubscribe, waiting,
 )
 
-QUEUE_CAPACITY = 16
+QUEUE_CAPACITY = 10
 
 
 def test(port):
