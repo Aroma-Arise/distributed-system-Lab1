@@ -2,7 +2,7 @@
 
 A concurrent HTTP/1.0 file server with a built-in pub-sub broker, written in Go on top of raw TCP sockets (`net.Listen`). The `net/http` package is used only to parse requests.
 
-- Assignment summary: `docs/ASSIGNMENT.md`
+- Assignment summary: `docs/ASSIGNMENT.pdf`
 - Design notes (Traditional Chinese): `docs/DESIGN.md`
 - Test suite: `lab1-demo-tests/README.md`
 
