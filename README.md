@@ -204,7 +204,7 @@ SSH and HTTP are both application protocols on top of TCP. They differ in the de
 
 #### SSH path (TCP 22): from your laptop to the instance's shell
 1. `ssh -i labsuser.pem ec2-user@<public-ip>` opens a TCP connection to `<public-ip>:22`.
-2. The internet gateway of the VPC translates the public IP to the instance's private IP (`172.31.x.x`). The instance itself only knows its private IP.
+2. The internet gateway translates the public IP to the instance's private IP (`172.31.x.x`). The instance itself only knows its private IP.
 3. The security group checks the inbound rule for TCP 22 and lets the connection in.
 4. The kernel on the instance hands the connection to `sshd`, the SSH service of the host OS.
 5. SSH verifies the host key, then logs you in with the private key in `labsuser.pem`. AWS installed the matching public key (`vockey`) for `ec2-user` when it launched the instance.
@@ -241,7 +241,7 @@ Inbound rules:
 |SSH|TCP|22|Anywhere (`0.0.0.0/0`)|Log in to deploy and maintain the server|
 |Custom TCP|TCP|8080|Anywhere (`0.0.0.0/0`)|The HTTP server and pub-sub broker|
 
-SSH is open to all addresses, so it works from any network. Login still requires `labsuser.pem`. Keep the key private and never commit it (`*.pem` is in `.gitignore`).
+SSH is open to all addresses so it works from any network. Login still requires `labsuser.pem`, because password login is disabled on Amazon Linux. Keep the key private and never commit it (`*.pem` is in `.gitignore`).
 
 ### 1. Start the lab and download the key
 1. Log in to [AWS Academy](https://awsacademy.instructure.com/) → **Modules** → **Launch AWS Academy Learner Lab**.
@@ -274,7 +274,7 @@ On macOS or Linux, run `chmod 400 labsuser.pem` instead of `icacls`. SSH refuses
 
 On the first connection, SSH shows the host's key fingerprint and asks `Are you sure you want to continue connecting?`. Type `yes`. The fingerprint is saved in `~/.ssh/known_hosts`, and later connections to the same host do not ask again.
 
-The prompt changes to `[ec2-user@ip-172-31-x-x ~]$` once you are logged in. All following commands run on the instance until you type `exit`.
+The prompt changes to `[ec2-user@...]$` once you are logged in. All following commands run on the instance until you type `exit`.
 
 ### 4. Install Docker and Git
 
