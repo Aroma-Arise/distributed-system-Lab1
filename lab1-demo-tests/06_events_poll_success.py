@@ -4,6 +4,7 @@ from common import (
     run, status, subscribe, unique, unsubscribe, waiting,
 )
 
+# 测试长轮询的成功返回，确保在10秒超时前收到消息
 
 def test(port):
     topic = unique("wake")

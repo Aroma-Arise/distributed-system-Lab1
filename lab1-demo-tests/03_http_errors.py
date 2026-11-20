@@ -1,6 +1,7 @@
 import socket
 from common import HOST, check, request, run, status, unique
 
+# 测试HTTP错误响应
 
 def test(port):
     name = unique("missing")

@@ -4,6 +4,7 @@ from common import (
     read_response, run, status, unique, waiting,
 )
 
+# 第十一个请求必须等待
 
 def test(port):
     prefix = unique("limit")

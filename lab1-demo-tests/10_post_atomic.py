@@ -1,5 +1,6 @@
 from common import check, get_file, partial_post, post_file, read_response, run, status, unique, waiting
 
+# 写入过程不会让客户端读到半份文件，也不会把 A 和 B 的内容混合起来
 
 def test(port):
     path = f"/{unique('atomic')}.txt"

@@ -1,5 +1,6 @@
 from common import broker_path, request, run, status, subscribe, unique, unsubscribe
 
+# 测试无效的/events请求，确保返回正确的错误码
 
 def test(port):
     topic = unique("invalid")

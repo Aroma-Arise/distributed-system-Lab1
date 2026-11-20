@@ -4,6 +4,8 @@ from common import (
     run, status, subscribe, unique, unsubscribe, waiting,
 )
 
+# 十个长轮询不会堵住 publish
+# 十个 events 请求同时等待，publish 仍然能进入并唤醒它们
 
 def test(port):
     topic = unique("poll-slots")

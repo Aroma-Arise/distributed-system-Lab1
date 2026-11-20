@@ -5,6 +5,10 @@ from common import (
     subscribe, unique, unsubscribe,
 )
 
+# 测试发布/订阅的功能，包括：
+# 先发布一条消息，后面新创建的订阅者不能收到这个消息
+# 应该收到自己 topic 的消息，不受前一个 topic 干扰
+
 
 def test(port):
     topic = unique("publish")

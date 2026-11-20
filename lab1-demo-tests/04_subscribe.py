@@ -1,5 +1,11 @@
 from common import broker_path, check, request, run, status, subscribe, unique, unsubscribe
 
+# 订阅主题，确保每个订阅者获得不同的ID
+# missing topic: 400
+# GET is unsupported for /subscribe: 501
+# 用同一个 topic订阅两次，确保返回的ID不同
+# 检查得到两个不同的 ID
+# 取消两次订阅，清理测试状态
 
 def test(port):
     topic = unique("subscribe")

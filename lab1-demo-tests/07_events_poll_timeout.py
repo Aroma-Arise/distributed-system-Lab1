@@ -1,6 +1,7 @@
 import time
 from common import broker_path, check, contents, request, run, status, subscribe, unique, unsubscribe
 
+# 测试长轮询的超时返回，确保在10秒超时后返回204
 
 def test(port):
     topic = unique("timeout")

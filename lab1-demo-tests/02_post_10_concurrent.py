@@ -2,6 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from threading import Barrier
 from common import get_file, request, run, status, unique
 
+# 同时上传10个文件，并读取回传内容，确保上传成功
 
 def test(port):
     prefix = unique("post")

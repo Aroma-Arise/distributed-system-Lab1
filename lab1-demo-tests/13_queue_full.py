@@ -5,6 +5,14 @@ from common import (
 
 QUEUE_CAPACITY = 10
 
+## 测试订阅者队列满时，新的发布不会阻塞其他订阅者
+# 创建慢订阅者 slow。
+# 连续发布十六条消息，但它一直不读取。
+# 此时它的队列已经满了。
+# 再创建新订阅者 fast，它的队列是空的。
+# 发布第十七条消息。
+# slow 因为队列已满，跳过这条消息
+# 第十七条信息就没有，因为队列满了
 
 def test(port):
     topic = unique("queue-full")

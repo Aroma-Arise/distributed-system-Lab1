@@ -3,6 +3,10 @@ from common import (
     request, run, status, subscribe, unique, unsubscribe, waiting,
 )
 
+## 测试取消订阅的功能，确保取消订阅后，等待的/events请求被唤醒，并返回404
+# 一个请求正在等待消息，另一个请求取消了它的订阅。
+# 你的实现中，取消订阅会关闭 done channel，等待中的 handler 被唤醒，返回 404
+# 另一个订阅者仍然能收到新发布的消息
 
 def test(port):
     topic = unique("unsubscribe")
